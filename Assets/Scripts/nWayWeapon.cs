@@ -20,7 +20,6 @@ public class nWayWeapon : MonoBehaviour {
 		if(timeElapsed >= interval) {
 			Vector2 angle = target.transform.position - transform.position;
 			angle.Normalize ();
-			Debug.Log (transform.position);
 			if (n == 1) {
 				GameObject obj = Instantiate (bullet, transform.position, Quaternion.identity);
 				obj.GetComponent<Rigidbody2D> ().velocity = angle * speed;
