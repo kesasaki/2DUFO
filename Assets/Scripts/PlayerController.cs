@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -9,6 +10,8 @@ public class PlayerController : MonoBehaviour {
 	public int speedkey;
 	public Text countText;
 	public Text winText;
+	public int hitpoint;
+	public string nextscene;
 
 	private int count;
 	private Rigidbody2D rb2d;
@@ -21,6 +24,11 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
+
+		if (hitpoint <= 0) {
+			Debug.Log (nextscene);
+			SceneManager.LoadScene(nextscene);
+		}
 		// 加速度
 		float moveHorizontal = Input.acceleration.x * speedtilt;
 		float moveVertical = Input.acceleration.y * speedtilt;
@@ -53,6 +61,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void damage(int damage) {
-		Debug.Log (damage);
+		hitpoint -= damage;
+		Debug.Log ("hitpoint " + hitpoint + " damage " + damage);
 	}
 }
