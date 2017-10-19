@@ -23,7 +23,6 @@ public class BulletController : MonoBehaviour {
 	// 衝突
 	void OnTriggerEnter2D(Collider2D other) {
 		if ((enemybullet && other.tag == "Player") || (!enemybullet && other.tag == "Enemy")) {
-			Debug.Log (other.tag + " " + enemybullet);
 			other.gameObject.SendMessage ("damage", damage);
 			Destroy (this.gameObject);
 		}

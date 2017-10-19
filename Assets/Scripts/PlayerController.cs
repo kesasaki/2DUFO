@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate () {
 
 		if (hitpoint <= 0) {
-			Debug.Log (nextscene);
 			SceneManager.LoadScene(nextscene);
 		}
 		// 加速度
@@ -62,6 +61,5 @@ public class PlayerController : MonoBehaviour {
 
 	void damage(int damage) {
 		hitpoint -= damage;
-		Debug.Log ("hitpoint " + hitpoint + " damage " + damage);
 	}
 }
