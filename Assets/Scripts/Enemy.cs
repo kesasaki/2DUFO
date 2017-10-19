@@ -14,14 +14,12 @@ public class Enemy : MonoBehaviour {
 
 	void Update () {
 		if (hitpoint <= 0) {
-			Debug.Log ("death");
 			Destroy (this.gameObject);
 		}
 	}
 
 	void damage(int damage) {
 		hitpoint -= damage;
-		Debug.Log ("hitpoint " + hitpoint);
 	}
 
 	void OnDestroy() {
