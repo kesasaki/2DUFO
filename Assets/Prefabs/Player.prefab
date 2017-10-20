@@ -93,7 +93,7 @@ MonoBehaviour:
   speedkey: 1
   countText: {fileID: 0}
   winText: {fileID: 0}
-  hitpoint: 0
+  hitpoint: 100
   nextscene: Start
 --- !u!212 &212074298454893058
 SpriteRenderer:
