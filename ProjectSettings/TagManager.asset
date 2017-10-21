@@ -17,12 +17,10 @@ TagManager:
   - UI
   - 
   - 
-  - Background
-  - Enemy
-  - Bullet
-  - Player
   - Effect
-  - UI
+  - Player
+  - Bullet
+  - Enemy
   - 
   - 
   - 
@@ -30,6 +28,8 @@ TagManager:
   - 
   - 
   - 
+  - 
+  - Background
   - 
   - 
   - 
