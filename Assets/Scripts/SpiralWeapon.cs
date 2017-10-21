@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpiralWeapon : MonoBehaviour {
 	public float interval;
 	public GameObject bullet;
+	public GameObject end_perticle;
 	public float speed;
 	public Vector2 angle;
 	public float angleRate;

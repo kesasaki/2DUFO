@@ -6,6 +6,7 @@ public class nWayWeapon : MonoBehaviour {
 	public float interval;
 	public GameObject bullet;
 	public GameObject target;
+	public GameObject end_perticle;
 	public float speed;
 	public float anglerange;
 	public int n;
@@ -33,6 +34,7 @@ public class nWayWeapon : MonoBehaviour {
 				obj.GetComponent<BulletController>().enemybullet = enemybullet;
 				obj.GetComponent<BulletController>().damage = damage;
 				obj.GetComponent<BulletController>().range = range;
+				obj.GetComponent<BulletController>().end_perticle = end_perticle;
 				obj.transform.localScale *= bulletsize;
 				timeElapsed = 0.0f;
 			} else {
@@ -43,6 +45,7 @@ public class nWayWeapon : MonoBehaviour {
 					obj.GetComponent<BulletController>().enemybullet = enemybullet;
 					obj.GetComponent<BulletController>().damage = damage;
 					obj.GetComponent<BulletController>().range = range;
+					obj.GetComponent<BulletController>().end_perticle = end_perticle;
 					obj.transform.localScale *= bulletsize;
 					timeElapsed = 0.0f;
 				}

@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
 
 	public int hitpoint;
 	public Text winText;
+	public GameObject end_perticle;
 
 	void Start () {
 		
@@ -23,6 +24,9 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void OnDestroy() {
+		if (end_perticle != null) {
+			Instantiate (end_perticle, transform.position, Quaternion.identity);
+		}
 		winText.text = "YOU WIN";
 	}
 }
