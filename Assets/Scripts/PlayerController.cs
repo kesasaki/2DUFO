@@ -12,11 +12,16 @@ public class PlayerController : MonoBehaviour {
 	public Text winText;
 	public int hitpoint;
 	public string nextscene;
+	public AudioClip audio_damage;
+	public GameObject audio_explosion;
+	public GameObject end_perticle;
 
+	private AudioSource audioSource;
 	private int count;
 	private Rigidbody2D rb2d;
 
 	void Start() {
+		audioSource = gameObject.GetComponent<AudioSource> ();
 		rb2d = GetComponent<Rigidbody2D> ();
 		count = 0;
 		SetCountText ();
@@ -26,7 +31,10 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate () {
 
 		if (hitpoint <= 0) {
-			SceneManager.LoadScene(nextscene);
+			Destroy (this.gameObject);
+			Instantiate (end_perticle, transform.position, Quaternion.identity);
+			Instantiate (audio_explosion, transform.position, Quaternion.identity);
+			winText.text = "YOU WIN";
 		}
 		// 加速度
 		float moveHorizontal = Input.acceleration.x * speedtilt;
@@ -61,5 +69,6 @@ public class PlayerController : MonoBehaviour {
 
 	void damage(int damage) {
 		hitpoint -= damage;
+		audioSource.PlayOneShot (audio_damage, 1.0f);
 	}
 }

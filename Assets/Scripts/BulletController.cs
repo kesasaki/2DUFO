@@ -25,13 +25,10 @@ public class BulletController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if ((enemybullet && other.tag == "Player") || (!enemybullet && other.tag == "Enemy")) {
 			other.gameObject.SendMessage ("damage", damage);
+			if (end_perticle != null) {
+				Instantiate (end_perticle, transform.position, Quaternion.identity);
+			}
 			Destroy (this.gameObject);
-		}
-	}
-
-	void OnDestroy() {
-		if (end_perticle != null) {
-			Instantiate (end_perticle, transform.position, Quaternion.identity);
 		}
 	}
 }
