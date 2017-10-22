@@ -8,6 +8,7 @@ public class BulletController : MonoBehaviour {
 	public int damage;
 	public bool enemybullet;
 	public int range = 100;
+	public GameObject end_perticle;
 	private int distance = 0;
 
 	void Start() {
@@ -24,6 +25,9 @@ public class BulletController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if ((enemybullet && other.tag == "Player") || (!enemybullet && other.tag == "Enemy")) {
 			other.gameObject.SendMessage ("damage", damage);
+			if (end_perticle != null) {
+				Instantiate (end_perticle, transform.position, Quaternion.identity);
+			}
 			Destroy (this.gameObject);
 		}
 	}

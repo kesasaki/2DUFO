@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpiralWeapon : MonoBehaviour {
 	public float interval;
 	public GameObject bullet;
+	public GameObject end_perticle;
 	public float speed;
 	public Vector2 angle;
 	public float angleRate;
@@ -14,11 +15,14 @@ public class SpiralWeapon : MonoBehaviour {
 	public bool clockwise;
 	private float timeElapsed = 0f;
 	private bool enemybullet = true;
+	public AudioClip audio_shoot;
+	private AudioSource audioSource;
 
 	void Start () {	
 		if (tag == "Player") {
 			enemybullet = false;
 		}
+		audioSource = gameObject.GetComponent<AudioSource> ();
 	}
 
 	void Update () {
@@ -33,6 +37,7 @@ public class SpiralWeapon : MonoBehaviour {
 			timeElapsed = 0.0f;
 			int clockwiseornot = (clockwise) ? -1 : 1;
 			angle = Quaternion.Euler (0f, 0f, angleRate * clockwiseornot) * angle ;
+			audioSource.PlayOneShot (audio_shoot, 1.0f);
 		}
 
 	}

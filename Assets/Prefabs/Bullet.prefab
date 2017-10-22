@@ -92,6 +92,7 @@ MonoBehaviour:
   damage: 0
   enemybullet: 1
   range: 100
+  end_perticle: {fileID: 0}
 --- !u!212 &212805906843858966
 SpriteRenderer:
   m_ObjectHideFlags: 1
