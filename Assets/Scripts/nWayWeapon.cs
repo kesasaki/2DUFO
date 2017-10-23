@@ -13,9 +13,9 @@ public class nWayWeapon : MonoBehaviour {
 	public int damage;
 	public int range;
 	public float bulletsize;
+	public AudioClip audio_shoot;
 	private float timeElapsed = 0f;
 	private bool enemybullet = true;
-	public AudioClip audio_shoot;
 	private AudioSource audioSource;
 
 

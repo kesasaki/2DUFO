@@ -9,8 +9,14 @@ public class Scene : MonoBehaviour {
 	public Text countText;
 	public Text winText;
 	public string nextscene;
+	public AudioClip audio_win;
+	public AudioClip audio_lose;
+
+	private bool end_flag=false;
+	private AudioSource audioSource;
 
 	void Start () {
+		audioSource = gameObject.GetComponent<AudioSource> ();
 		winText.text = "";
 		
 	}
@@ -19,13 +25,17 @@ public class Scene : MonoBehaviour {
 		int enemynum =  GameObject.FindGameObjectsWithTag("Enemy").Length;
 		int playernum = GameObject.FindGameObjectsWithTag("Player").Length;
 		countText.text = "Enemy: " + enemynum.ToString();
-		if (enemynum <= 0) {
+		if (!end_flag && enemynum <= 0) {
 			winText.text = "YOU WIN";
 			Invoke("goNextScene", 3.5f);
+			audioSource.PlayOneShot (audio_win, 1.0f);
+			end_flag = true;
 		}
-		if (playernum <= 0) {
+		if (!end_flag && playernum <= 0) {
 			winText.text = "YOU LOSE";
 			Invoke("goNextScene", 3.5f);
+			audioSource.PlayOneShot (audio_lose, 1.0f);
+			end_flag = true;
 		}
 	}
 
