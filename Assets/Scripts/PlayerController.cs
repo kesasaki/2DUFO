@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour {
 			Destroy (this.gameObject);
 			Instantiate (end_perticle, transform.position, Quaternion.identity);
 			Instantiate (audio_explosion, transform.position, Quaternion.identity);
-			winText.text = "YOU WIN";
 		}
 		// 加速度
 		float moveHorizontal = Input.acceleration.x * speedtilt;

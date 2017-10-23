@@ -19,7 +19,6 @@ public class StartButton : MonoBehaviour {
 
 	public void OnClick() {
 		audioSource.PlayOneShot (audio_push, 2.0f);
-		Debug.Log (scenename);
 		SceneManager.LoadScene(scenename);
 	}
 }
