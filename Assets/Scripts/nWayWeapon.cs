@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class nWayWeapon : MonoBehaviour {
-	public float interval;
 	public GameObject bullet;
 	public GameObject target;
 	public GameObject end_perticle;
-	public float speed;
-	public float anglerange;
-	public int n;
-	public int damage;
-	public int range;
-	public float bulletsize;
+	public float interval = 0.2f;
+	public float speed = 30;
+	public float anglerange = 30;
+	public int n = 3;
+	public int damage = 20;
+	public int range = 100;
+	public float bulletsize = 1.0f;
+	public AudioClip audio_shoot;
 	private float timeElapsed = 0f;
 	private bool enemybullet = true;
-	public AudioClip audio_shoot;
 	private AudioSource audioSource;
 
 
