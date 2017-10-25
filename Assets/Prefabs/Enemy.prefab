@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11bc27da7e3e244ee97b5e1c6b0208c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 0.4
+  interval: 0.1
   bullet: {fileID: 1124153292108740, guid: 685fa278f775b417a84db8f81332f09f, type: 2}
   target: {fileID: 0}
   end_perticle: {fileID: 100002, guid: 5c1a1b8b0fc6a7a4083086fd4b43b8cf, type: 2}
@@ -181,7 +181,7 @@ MonoBehaviour:
   damage: 20
   range: 100
   bulletsize: 1
-  audio_shoot: {fileID: 8300000, guid: 89883c5c7d97643c79378d29523584d0, type: 3}
+  audio_shoot: {fileID: 8300000, guid: 560d77c1a429a491a8f7a7201896a26c, type: 3}
 --- !u!114 &114941546589615042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -194,7 +194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoint: 100
-  winText: {fileID: 0}
   end_perticle: {fileID: 1518864733396568, guid: d09eb7e3662b53c4abf3889d45fd69ad,
     type: 2}
   audio_explosion: {fileID: 1482710558257720, guid: 6373b19a98b4245fa84afcf24426701a,

@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpiralWeapon : MonoBehaviour {
-	public float interval;
 	public GameObject bullet;
 	public GameObject end_perticle;
-	public float speed;
-	public Vector2 angle;
-	public float angleRate;
-	public int damage;
-	public int range;
-	public float bulletsize;
-	public bool clockwise;
+	public AudioClip audio_shoot;
+	public float interval = 0.2f;
+	public float speed = 20;
+	public Vector2 angle = new Vector2 (0, 1.0f);
+	public float angleRate = 30;
+	public int damage = 20;
+	public int range = 100;
+	public float bulletsize = 1;
+	public bool clockwise = true;
 	private float timeElapsed = 0f;
 	private bool enemybullet = true;
-	public AudioClip audio_shoot;
 	private AudioSource audioSource;
 
 	void Start () {	
@@ -37,7 +37,7 @@ public class SpiralWeapon : MonoBehaviour {
 			timeElapsed = 0.0f;
 			int clockwiseornot = (clockwise) ? -1 : 1;
 			angle = Quaternion.Euler (0f, 0f, angleRate * clockwiseornot) * angle ;
-			audioSource.PlayOneShot (audio_shoot, 1.0f);
+			audioSource.PlayOneShot (audio_shoot, 0.1f);
 		}
 
 	}
