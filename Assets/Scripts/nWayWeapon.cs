@@ -41,7 +41,9 @@ public class nWayWeapon : MonoBehaviour {
 					obj.GetComponent<BulletController> ().end_perticle = end_perticle;
 					obj.transform.localScale *= bulletsize;
 					timeElapsed = 0.0f;
-					audioSource.PlayOneShot (audio_shoot, 0.1f);
+					if (audio_shoot != null) {
+						audioSource.PlayOneShot (audio_shoot, 0.1f);
+					}
 				} else {
 					for (int i = 0; i < n; i++) {
 						GameObject obj = Instantiate (bullet, transform.position, Quaternion.identity);
@@ -53,7 +55,9 @@ public class nWayWeapon : MonoBehaviour {
 						obj.GetComponent<BulletController> ().end_perticle = end_perticle;
 						obj.transform.localScale *= bulletsize;
 						timeElapsed = 0.0f;
-						audioSource.PlayOneShot (audio_shoot, 0.1f);
+						if (audio_shoot != null) {
+							audioSource.PlayOneShot (audio_shoot, 0.1f);
+						}
 					}
 				}
 			}

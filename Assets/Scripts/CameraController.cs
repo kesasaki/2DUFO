@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour {
 	}
 
 	void LateUpdate () {
-		transform.position = target.transform.position + offset;
+		if (target != null) {
+			transform.position = target.transform.position + offset;
+		}
 	}
 }
