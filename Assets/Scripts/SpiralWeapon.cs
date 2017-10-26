@@ -6,6 +6,7 @@ public class SpiralWeapon : MonoBehaviour {
 	public GameObject bullet;
 	public GameObject end_perticle;
 	public AudioClip audio_shoot;
+	public bool shootAudioOn = false;
 	public float interval = 0.2f;
 	public float speed = 20;
 	public Vector2 angle = new Vector2 (0, 1.0f);
@@ -37,7 +38,9 @@ public class SpiralWeapon : MonoBehaviour {
 			timeElapsed = 0.0f;
 			int clockwiseornot = (clockwise) ? -1 : 1;
 			angle = Quaternion.Euler (0f, 0f, angleRate * clockwiseornot) * angle ;
-			audioSource.PlayOneShot (audio_shoot, 0.1f);
+			if (audio_shoot != null) {
+				audioSource.PlayOneShot (audio_shoot, 0.1f);
+			}
 		}
 
 	}

@@ -27,13 +27,13 @@ public class Scene : MonoBehaviour {
 		countText.text = "Enemy: " + enemynum.ToString();
 		if (!end_flag && enemynum <= 0) {
 			winText.text = "YOU WIN";
-			Invoke("goNextScene", 3.5f);
+			Invoke("goNextScene", audio_win.length);
 			audioSource.PlayOneShot (audio_win, 1.0f);
 			end_flag = true;
 		}
 		if (!end_flag && playernum <= 0) {
 			winText.text = "YOU LOSE";
-			Invoke("goNextScene", 3.5f);
+			Invoke("goNextScene", audio_lose.length);
 			audioSource.PlayOneShot (audio_lose, 1.0f);
 			end_flag = true;
 		}
