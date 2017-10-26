@@ -8,38 +8,72 @@ public class Scene : MonoBehaviour {
 
 	public Text countText;
 	public Text winText;
+	public Text playerHitpoint;
 	public string nextscene;
 	public AudioClip audio_win;
 	public AudioClip audio_lose;
+	public GameObject background;
+	public GameObject enemy1;
+	public GameObject enemy2;
+	public GameObject enemy3;
+	public GameObject player;
 
+	private int enemy_num_max = 10;
 	private bool end_flag=false;
 	private AudioSource audioSource;
+	private int point = 0;
 
 	void Start () {
 		audioSource = gameObject.GetComponent<AudioSource> ();
 		winText.text = "";
-		
+		for (int i = 0; i < enemy_num_max; i++) {
+			initiateEnemy ();
+		}
 	}
 
 	void Update () {
 		int enemynum =  GameObject.FindGameObjectsWithTag("Enemy").Length;
 		int playernum = GameObject.FindGameObjectsWithTag("Player").Length;
-		countText.text = "Enemy: " + enemynum.ToString();
 		if (!end_flag && enemynum <= 0) {
 			winText.text = "YOU WIN";
 			Invoke("goNextScene", audio_win.length);
 			audioSource.PlayOneShot (audio_win, 1.0f);
 			end_flag = true;
 		}
-		if (!end_flag && playernum <= 0) {
-			winText.text = "YOU LOSE";
-			Invoke("goNextScene", audio_lose.length);
-			audioSource.PlayOneShot (audio_lose, 1.0f);
-			end_flag = true;
+		if (player == null) {
+			if (!end_flag) {
+				winText.text = "YOU LOSE";
+				Invoke ("goNextScene", audio_lose.length);
+				audioSource.PlayOneShot (audio_lose, 1.0f);
+				end_flag = true;
+				playerHitpoint.text = "hitpoint: " + 0;
+			}
+		} else {
+			playerHitpoint.text = "hitpoint: " + player.GetComponent<PlayerController> ().hitpoint;
 		}
+		if (enemynum < enemy_num_max) {
+			point++;
+			initiateEnemy ();
+		}
+		countText.text = "point: " + point.ToString();
 	}
 
 	void goNextScene() {
 		SceneManager.LoadScene(nextscene);
+	}
+
+	void initiateEnemy() {
+		GameObject obj = Instantiate (
+			enemy1,
+			new Vector3 (
+				Random.Range (
+					background.GetComponent<SpriteRenderer> ().bounds.size.x / 2 * (-1),
+					background.GetComponent<SpriteRenderer> ().bounds.size.x / 2),
+				Random.Range (
+					background.GetComponent<SpriteRenderer> ().bounds.size.y / 2 * (-1),
+					background.GetComponent<SpriteRenderer> ().bounds.size.y / 2),
+				0),
+			Quaternion.identity);
+		obj.GetComponent<nWayWeapon> ().target = player;
 	}
 }
