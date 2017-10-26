@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114081438833279512}
   - component: {fileID: 82644318560035712}
   - component: {fileID: 114106691163035060}
-  - component: {fileID: 96460570270702038}
+  - component: {fileID: 96085828335709940}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -162,7 +162,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!96 &96460570270702038
+--- !u!96 &96085828335709940
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 1
@@ -176,7 +176,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 7cd73ef8e5a31a244a672ae32c0f6ddb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -191,11 +191,11 @@ TrailRenderer:
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 1
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 1
@@ -208,12 +208,18 @@ TrailRenderer:
         inSlope: 0
         outSlope: 0
         tangentMode: 0
+      - serializedVersion: 2
+        time: 0.50396824
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 1, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -278,6 +284,7 @@ MonoBehaviour:
   bullet: {fileID: 1388754235893686, guid: 1d77540dacceb42cf94670f999cd58d3, type: 2}
   end_perticle: {fileID: 100002, guid: cf3b534bec208f64ba4a3eda136f8892, type: 2}
   audio_shoot: {fileID: 8300000, guid: 527af03245d72475083a99116c3de391, type: 3}
+  shootAudioOn: 0
   interval: 0.1
   speed: 50
   angle: {x: 0, y: 1}
