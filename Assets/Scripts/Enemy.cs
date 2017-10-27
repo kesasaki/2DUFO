@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
-	void damage(int damage) {
+	void setDamage(int damage) {
 		hitpoint -= damage;
 		audioSource.PlayOneShot (audio_damage, 1.0f);
 	}

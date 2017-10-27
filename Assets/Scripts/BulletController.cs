@@ -5,17 +5,28 @@ using UnityEngine.UI;
 
 public class BulletController : MonoBehaviour {
 
-	public int damage;
-	public bool enemybullet;
+	public int damage = 30;
+	public bool enemybullet = true;
 	public int range = 100;
 	public GameObject end_perticle;
+	public int hitpoint = 10;
 	private int distance = 0;
 
 	void Start() {
 	}
 
 	void Update() {
+
+		// range 進んだら消える
 		if (distance > range) {
+			Destroy (this.gameObject);
+		}
+
+		// hitpoint 削られたら消える
+		if (hitpoint <= 0) {
+			if (end_perticle != null) {
+				Instantiate (end_perticle, transform.position, Quaternion.identity);
+			}
 			Destroy (this.gameObject);
 		}
 		distance += 1;
@@ -23,12 +34,16 @@ public class BulletController : MonoBehaviour {
 
 	// 衝突
 	void OnTriggerEnter2D(Collider2D other) {
-		if ((enemybullet && other.tag == "Player") || (!enemybullet && other.tag == "Enemy")) {
-			other.gameObject.SendMessage ("damage", damage);
+		if ((enemybullet && other.tag == "Player") || (!enemybullet && other.tag == "Enemy") || (!enemybullet && other.tag == "Bullet")) {
+			other.gameObject.SendMessage ("setDamage", damage);
 			if (end_perticle != null) {
 				Instantiate (end_perticle, transform.position, Quaternion.identity);
 			}
 			Destroy (this.gameObject);
 		}
+	}
+
+	public void setDamage(int damage) {
+		hitpoint -= damage;
 	}
 }
