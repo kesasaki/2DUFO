@@ -92,7 +92,9 @@ MonoBehaviour:
   damage: 0
   enemybullet: 1
   range: 100
-  end_perticle: {fileID: 0}
+  end_perticle: {fileID: 1583133410359590, guid: cc6e41e2952486045bb23f8319fb10bd,
+    type: 2}
+  hitpoint: 10
 --- !u!212 &212805906843858966
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -123,7 +125,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603580511
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a771553004d4149279459a8d0d1eb1fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

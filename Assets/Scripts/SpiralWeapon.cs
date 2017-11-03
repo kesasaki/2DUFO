@@ -12,7 +12,7 @@ public class SpiralWeapon : MonoBehaviour {
 	public Vector2 angle = new Vector2 (0, 1.0f);
 	public float angleRate = 30;
 	public int damage = 20;
-	public int range = 100;
+	public int range = 10;
 	public float bulletsize = 1;
 	public bool clockwise = true;
 	private float timeElapsed = 0f;

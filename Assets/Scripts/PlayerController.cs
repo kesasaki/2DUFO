@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 		rb2d = GetComponent<Rigidbody2D> ();
 	}
 
-	void Update () {
+	void FixedUpdate () {
 
 		if (hitpoint <= 0) {
 			Destroy (this.gameObject);

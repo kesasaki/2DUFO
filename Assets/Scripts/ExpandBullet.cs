@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class ExpandBullet : BulletController {
 
-	void Start () {
-		
-	}
-
-	void Update () {
-		GetComponent<Transform> ().localScale *= 1.1f;
+	void FixedUpdate () {
+		GetComponent<Transform> ().localScale *= 1.06f;
 	}
 }

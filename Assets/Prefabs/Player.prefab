@@ -195,7 +195,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 3
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 3
@@ -220,7 +220,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 0, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0.75686276}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -285,12 +285,12 @@ MonoBehaviour:
   end_perticle: {fileID: 100002, guid: cf3b534bec208f64ba4a3eda136f8892, type: 2}
   audio_shoot: {fileID: 8300000, guid: 527af03245d72475083a99116c3de391, type: 3}
   shootAudioOn: 0
-  interval: 0.1
+  interval: 0.2
   speed: 50
   angle: {x: 0, y: 1}
   angleRate: 0
-  damage: 50
-  range: 30
+  damage: 100
+  range: 100
   bulletsize: 1
   clockwise: 0
 --- !u!114 &114765191016186112
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedtilt: 5
-  speedkey: 1
+  speedkey: 5
   hitpoint: 100
   audio_damage: {fileID: 8300000, guid: 2fff3fdeb44da44d58545791871bf838, type: 3}
   audio_explosion: {fileID: 1482710558257720, guid: 6373b19a98b4245fa84afcf24426701a,
