@@ -7,6 +7,7 @@ public class nWayWeapon : Weapon {
 	public GameObject target;
 	public float interval = 0.2f;
 	public float anglerange = 30;
+	public float speed = 30;
 	public int n = 3;
 	private float timeElapsed = 0f;
 

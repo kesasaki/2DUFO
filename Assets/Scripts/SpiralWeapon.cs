@@ -7,6 +7,7 @@ public class SpiralWeapon : Weapon {
 	public float interval = 0.2f;
 	public Vector2 angle = new Vector2 (0, 1.0f);
 	public float angleRate = 30;
+	public float speed = 30;
 	public bool clockwise = true;
 	private float timeElapsed = 0f;
 
