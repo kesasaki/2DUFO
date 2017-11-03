@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
 
 	private AudioSource audioSource;
 	private Rigidbody2D rb2d;
+	private Vector2 movement;
 
 	void Start() {
 		audioSource = gameObject.GetComponent<AudioSource> ();
@@ -37,12 +38,16 @@ public class PlayerController : MonoBehaviour {
 			moveHorizontal = axisHorizontal;
 			moveVertical = axisVertical;
 		}
-		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
+		movement = new Vector2 (moveHorizontal, moveVertical);
 		rb2d.MovePosition (rb2d.position + movement);
 	}
 
-	void damage(int damage) {
+	void setDamage(int damage) {
 		hitpoint -= damage;
 		audioSource.PlayOneShot (audio_damage, 1.0f);
+	}
+
+	public Vector2 getVerosity() {
+		return movement;
 	}
 }
