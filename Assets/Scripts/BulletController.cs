@@ -12,10 +12,10 @@ public class BulletController : MonoBehaviour {
 	public int hitpoint = 10;
 	private int distance = 0;
 
-	void Start() {
+	public void Start() {
 	}
 
-	void Update() {
+	public void Update() {
 
 		// range 進んだら消える
 		if (distance > range) {
@@ -33,7 +33,7 @@ public class BulletController : MonoBehaviour {
 	}
 
 	// 衝突
-	void OnTriggerEnter2D(Collider2D other) {
+	public void OnTriggerEnter2D(Collider2D other) {
 		if ((enemybullet && other.tag == "Player") || (!enemybullet && other.tag == "Enemy")) {
 			other.gameObject.SendMessage ("setDamage", damage);
 			if (end_perticle != null) {
