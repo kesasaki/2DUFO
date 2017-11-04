@@ -22,7 +22,8 @@ public class BulletController : MonoBehaviour {
 		// hitpoint 削られたら消える
 		if (hitpoint <= 0) {
 			if (end_perticle != null) {
-				Instantiate (end_perticle, transform.position, Quaternion.identity);
+				GameObject end = Instantiate (end_perticle, transform.position, Quaternion.identity);
+				end.gameObject.transform.localScale = new Vector3 (6.0f, 6.0f, 6.0f);
 			}
 			Destroy (this.gameObject);
 		}

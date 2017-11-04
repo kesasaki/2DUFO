@@ -24,7 +24,8 @@ public class PlayerController : MonoBehaviour {
 
 		if (hitpoint <= 0) {
 			Destroy (this.gameObject);
-			Instantiate (end_perticle, transform.position, Quaternion.identity);
+			GameObject end = Instantiate (end_perticle, transform.position, Quaternion.identity);
+			end.gameObject.transform.localScale = new Vector3 (6.0f, 6.0f, 6.0f);
 			Instantiate (audio_explosion, transform.position, Quaternion.identity);
 		}
 		// 加速度

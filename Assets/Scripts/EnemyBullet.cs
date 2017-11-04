@@ -13,7 +13,8 @@ public class EnemyBullet : BulletController {
 		if (other.tag == "Player") {
 			other.gameObject.SendMessage ("setDamage", damage);
 			if (end_perticle != null) {
-				Instantiate (end_perticle, transform.position, Quaternion.identity);
+				GameObject end = Instantiate (end_perticle, transform.position, Quaternion.identity);
+				end.gameObject.transform.localScale = new Vector3 (6.0f, 6.0f, 6.0f);
 			}
 			Destroy (this.gameObject);
 		}
