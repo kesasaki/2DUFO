@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SemiAutoWeapon : Weapon {
-	public int expand_max = 40;
+	public int expand_max = 100;
 	public AudioClip audio_shoot;
 
 	private float starttime = 0;
@@ -19,8 +19,8 @@ public class SemiAutoWeapon : Weapon {
 		if (Input.GetKeyUp (KeyCode.Space) || (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Ended)){
 			GameObject obj = base.shoot ();
 			obj.transform.parent = this.transform;
-			obj.GetComponent<BulletController> ().range = Mathf.Min(expand_max / 2, (int)((Time.time - starttime) * 100));
-			Debug.Log ((Time.time - starttime) * 100);
+			obj.GetComponent<ExpandPlayerBullet> ().range = Mathf.Min(expand_max / 2, (int)((Time.time - starttime) * 100)) ;
+			Debug.Log (obj.GetComponent<BulletController> ().range);
 			base.audioSource.PlayOneShot (audio_shoot, 1.0f);
 		}
 	}

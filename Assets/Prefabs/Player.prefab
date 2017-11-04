@@ -266,7 +266,7 @@ MonoBehaviour:
   bullet: {fileID: 1388754235893686, guid: 1d77540dacceb42cf94670f999cd58d3, type: 2}
   end_perticle: {fileID: 100002, guid: cf3b534bec208f64ba4a3eda136f8892, type: 2}
   damage: 20
-  range: 10
+  range: 100
   bulletsize: 1
   audioSource: {fileID: 0}
   expand_max: 40

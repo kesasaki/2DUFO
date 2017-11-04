@@ -18,7 +18,7 @@ public class Scene : MonoBehaviour {
 	public GameObject enemy3;
 	public GameObject player;
 
-	private int enemy_num_max = 10;
+	private int enemy_num_max = 3;
 	private bool end_flag=false;
 	private AudioSource audioSource;
 	private int point = 0;

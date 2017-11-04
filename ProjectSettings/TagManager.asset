@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - Enemy
   - FxTemporaire
+  - EnemyBullet
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
