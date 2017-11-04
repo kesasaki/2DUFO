@@ -34,12 +34,16 @@ public class Scene : MonoBehaviour {
 	void Update () {
 		int enemynum =  GameObject.FindGameObjectsWithTag("Enemy").Length;
 		int playernum = GameObject.FindGameObjectsWithTag("Player").Length;
+
+		// 敵全滅
 		if (!end_flag && enemynum <= 0) {
 			winText.text = "YOU WIN";
 			Invoke("goNextScene", audio_win.length);
 			audioSource.PlayOneShot (audio_win, 1.0f);
 			end_flag = true;
 		}
+
+		// プレイヤー死亡
 		if (player == null) {
 			if (!end_flag) {
 				winText.text = "YOU LOSE";
@@ -48,13 +52,19 @@ public class Scene : MonoBehaviour {
 				end_flag = true;
 				playerHitpoint.text = "hitpoint: " + 0;
 			}
+
+		// プレイヤー生存
 		} else {
 			playerHitpoint.text = "hitpoint: " + player.GetComponent<PlayerController> ().hitpoint;
 		}
+
+		// 敵が減る
 		if (enemynum < enemy_num_max) {
 			point++;
 			initiateEnemy ();
 		}
+
+		// 現在のステータス表示
 		countText.text = "point: " + point.ToString();
 	}
 

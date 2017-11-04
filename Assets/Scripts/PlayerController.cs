@@ -8,12 +8,13 @@ public class PlayerController : MonoBehaviour {
 	public int speedkey;
 	public int hitpoint;
 	public AudioClip audio_damage;
-	public GameObject audio_explosion;
+	public AudioClip audio_explosion;
 	public GameObject end_perticle;
 
 	private AudioSource audioSource;
 	private Rigidbody2D rb2d;
 	private Vector2 movement;
+	private bool end_flag = false;
 
 	void Start() {
 		audioSource = gameObject.GetComponent<AudioSource> ();
@@ -22,11 +23,14 @@ public class PlayerController : MonoBehaviour {
 
 	void FixedUpdate () {
 
-		if (hitpoint <= 0) {
-			Destroy (this.gameObject);
+		if (hitpoint <= 0 && !end_flag) {
 			GameObject end = Instantiate (end_perticle, transform.position, Quaternion.identity);
 			end.gameObject.transform.localScale = new Vector3 (6.0f, 6.0f, 6.0f);
-			Instantiate (audio_explosion, transform.position, Quaternion.identity);
+			audioSource.PlayOneShot (audio_explosion, 1.0f);
+			Destroy (this.gameObject, audio_explosion.length);
+			gameObject.GetComponent<SpriteRenderer> ().sortingLayerName = "Unvisible";
+			gameObject.GetComponent<Rigidbody2D> ().simulated = false;
+			end_flag = true;
 		}
 		// 加速度
 		float moveHorizontal = Input.acceleration.x * speedtilt;

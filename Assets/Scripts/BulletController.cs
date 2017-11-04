@@ -9,7 +9,9 @@ public class BulletController : MonoBehaviour {
 	public int range = 100;
 	public GameObject end_perticle;
 	public int hitpoint = 10;
+
 	private int distance = 0;
+	private bool end_flag = false;
 
 	public void Update() {
 
