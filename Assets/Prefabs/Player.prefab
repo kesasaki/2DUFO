@@ -251,7 +251,7 @@ TrailRenderer:
     alignment: 0
     textureMode: 0
   m_MinVertexDistance: 0.1
-  m_Autodestruct: 1
+  m_Autodestruct: 0
 --- !u!114 &114104597089415620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -265,11 +265,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1388754235893686, guid: 1d77540dacceb42cf94670f999cd58d3, type: 2}
   end_perticle: {fileID: 100002, guid: cf3b534bec208f64ba4a3eda136f8892, type: 2}
-  damage: 20
+  damage: 100
   range: 100
   bulletsize: 1
   audioSource: {fileID: 0}
   expand_max: 40
+  expand_speed: 16
   audio_shoot: {fileID: 8300000, guid: 527af03245d72475083a99116c3de391, type: 3}
 --- !u!114 &114533403465567688
 MonoBehaviour:

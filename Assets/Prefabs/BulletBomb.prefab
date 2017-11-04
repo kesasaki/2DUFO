@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 58032918274256118}
   - component: {fileID: 50341337285126002}
   - component: {fileID: 212531264363897388}
-  - component: {fileID: 114568939888983434}
   - component: {fileID: 114652897000976560}
   m_Layer: 0
   m_Name: BulletBomb
@@ -79,21 +78,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &114568939888983434
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1388754235893686}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e7187e62e8ae4593ba1cef2b2d41f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 100
-  range: 10
-  end_perticle: {fileID: 0}
-  hitpoint: 100
 --- !u!114 &114652897000976560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,9 +90,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  range: 100
+  range: 5
   end_perticle: {fileID: 100006, guid: 8a4aceaf2957c044480166b429f4c7d0, type: 2}
   hitpoint: 100
+  expandSpeed: 30
 --- !u!212 &212531264363897388
 SpriteRenderer:
   m_ObjectHideFlags: 1

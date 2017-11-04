@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SemiAutoWeapon : Weapon {
 	public int expand_max = 100;
+	public int expand_speed = 10;
 	public AudioClip audio_shoot;
 
 	private float starttime = 0;
@@ -20,6 +21,7 @@ public class SemiAutoWeapon : Weapon {
 			GameObject obj = base.shoot ();
 			obj.transform.parent = this.transform;
 			obj.GetComponent<ExpandPlayerBullet> ().range = Mathf.Min(expand_max / 2, (int)((Time.time - starttime) * 100)) ;
+			obj.GetComponent<ExpandPlayerBullet> ().expandSpeed = expand_speed ;
 			Debug.Log (obj.GetComponent<BulletController> ().range);
 			base.audioSource.PlayOneShot (audio_shoot, 1.0f);
 		}
