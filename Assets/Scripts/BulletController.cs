@@ -9,6 +9,7 @@ public class BulletController : MonoBehaviour {
 	public int range = 100;
 	public GameObject end_perticle;
 	public int hitpoint = 10;
+	public float perticle_size = 1.0f;
 
 	private int distance = 0;
 	private bool end_flag = false;
@@ -25,7 +26,7 @@ public class BulletController : MonoBehaviour {
 		if (hitpoint <= 0) {
 			if (end_perticle != null) {
 				GameObject end = Instantiate (end_perticle, transform.position, Quaternion.identity);
-				end.gameObject.transform.localScale = new Vector3 (6.0f, 6.0f, 6.0f);
+				end.gameObject.transform.localScale = new Vector3 (6.0f, 6.0f, 6.0f) * perticle_size;
 			}
 			Destroy (this.gameObject);
 		}

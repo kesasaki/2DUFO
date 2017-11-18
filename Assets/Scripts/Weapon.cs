@@ -5,10 +5,12 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
 	public GameObject bullet;
 	public GameObject hit_perticle;
+	public float perticle_size = 1.0f;
 	public int damage = 20;
 	public int range = 10;
 	public float bulletsize = 1;
 	public AudioSource audioSource;
+	public AudioClip audioFire;
 	public bool available = true;
 
 	public void Start () {
@@ -23,7 +25,9 @@ public class Weapon : MonoBehaviour {
 		obj.GetComponent<BulletController> ().damage = damage;
 		obj.GetComponent<BulletController> ().range = range;
 		obj.GetComponent<BulletController> ().end_perticle = hit_perticle;
+		obj.GetComponent<BulletController> ().perticle_size = perticle_size;
 		obj.transform.localScale *= bulletsize;
+		audioSource.PlayOneShot (audioFire, 1.0f);
 		return obj;
 	}
 }

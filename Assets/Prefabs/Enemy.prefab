@@ -177,9 +177,10 @@ MonoBehaviour:
   range: 100
   bulletsize: 1
   audioSource: {fileID: 0}
+  available: 1
   target: {fileID: 0}
-  interval: 0.2
-  anglerange: 40
+  interval: 0.4
+  anglerange: 30
   speed: 20
   n: 3
 --- !u!114 &114941546589615042

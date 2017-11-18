@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
 	public AudioClip audio_damage;
 	public AudioClip audio_explosion;
 	public GameObject end_perticle;
+	public int max_speed = 500;
 
 	private AudioSource audioSource;
 	private Rigidbody2D rb2d;
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour {
 			Destroy (this.gameObject, audio_explosion.length);
 			gameObject.GetComponent<SpriteRenderer> ().sortingLayerName = "Unvisible";
 			gameObject.GetComponent<Rigidbody2D> ().simulated = false;
+			gameObject.GetComponent<Weapon> ().available = false;
 			end_flag = true;
 		}
 		// 加速度
@@ -44,6 +46,10 @@ public class PlayerController : MonoBehaviour {
 			moveVertical = axisVertical;
 		}
 		movement = new Vector2 (moveHorizontal, moveVertical);
+		if (movement.magnitude > (float)max_speed / 100) {
+			movement.Normalize ();
+			movement *= ((float)max_speed / 100);
+		}
 		rb2d.MovePosition (rb2d.position + movement);
 	}
 

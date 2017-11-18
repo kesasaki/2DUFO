@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour {
 		if (target != null) {
 			transform.position = target.transform.position + offset;
 			GetComponent<Camera> ().orthographicSize = defaultsize + target.GetComponent<PlayerController>().getVerosity().magnitude / Time.deltaTime / 10;
-			//Debug.Log (target.GetComponent<PlayerController>().getVerosity().magnitude);
+			//Debug.Log (GetComponent<Camera> ().orthographicSize);
 		}
 	}
 }
