@@ -172,16 +172,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1124153292108740, guid: 685fa278f775b417a84db8f81332f09f, type: 2}
-  target: {fileID: 0}
-  end_perticle: {fileID: 100002, guid: 5c1a1b8b0fc6a7a4083086fd4b43b8cf, type: 2}
-  interval: 0.2
-  speed: 20
-  anglerange: 40
-  n: 3
+  hit_perticle: {fileID: 100002, guid: 6bbb8ec780b04e14089d5889db90227e, type: 2}
   damage: 20
   range: 100
   bulletsize: 1
-  audio_shoot: {fileID: 0}
+  audioSource: {fileID: 0}
+  target: {fileID: 0}
+  interval: 0.2
+  anglerange: 40
+  speed: 20
+  n: 3
 --- !u!114 &114941546589615042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -194,11 +194,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoint: 100
-  end_perticle: {fileID: 1518864733396568, guid: d09eb7e3662b53c4abf3889d45fd69ad,
-    type: 2}
-  audio_explosion: {fileID: 1482710558257720, guid: 6373b19a98b4245fa84afcf24426701a,
+  end_perticle: {fileID: 1583133410359590, guid: f2cec9fd01e349f418008078bcb2765d,
     type: 2}
   audio_damage: {fileID: 8300000, guid: 1de1e8a440c7147a8bc721e7e0522d0e, type: 3}
+  audio_explosion: {fileID: 8300000, guid: 9c32617ebf03b4ac3b3f521750435944, type: 3}
 --- !u!212 &212470457915758928
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -229,7 +228,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1096898017
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 80f46f6fecc9b49518d2fa1e12ba271e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

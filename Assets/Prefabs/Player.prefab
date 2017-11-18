@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1388754235893686, guid: 1d77540dacceb42cf94670f999cd58d3, type: 2}
-  end_perticle: {fileID: 100002, guid: cf3b534bec208f64ba4a3eda136f8892, type: 2}
+  hit_perticle: {fileID: 0}
   damage: 100
   range: 100
   bulletsize: 1
@@ -287,9 +287,8 @@ MonoBehaviour:
   speedkey: 5
   hitpoint: 100
   audio_damage: {fileID: 8300000, guid: 2fff3fdeb44da44d58545791871bf838, type: 3}
-  audio_explosion: {fileID: 1482710558257720, guid: 6373b19a98b4245fa84afcf24426701a,
-    type: 2}
-  end_perticle: {fileID: 100000, guid: a6b884d400e6d2244a29b0550830c6da, type: 2}
+  audio_explosion: {fileID: 8300000, guid: 6e0f953c84c654df598106bc1cfa2275, type: 3}
+  end_perticle: {fileID: 100002, guid: 646d8ce832714ff4d9fb29973186759e, type: 2}
 --- !u!114 &114572146116746748
 MonoBehaviour:
   m_ObjectHideFlags: 1
