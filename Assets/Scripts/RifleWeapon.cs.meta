@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: 714dda2037d7a4cae93955ba02d64184
-timeCreated: 1509853576
+timeCreated: 1511012386
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bullet: {fileID: 1490724867664658, guid: d08afbf2c807a4c81be25d7621285bd4, type: 2}
+  - hit_perticle: {fileID: 100002, guid: e05640b713279be4ea35ced053857820, type: 2}
+  - audioSource: {instanceID: 0}
+  - audioFire: {fileID: 8300000, guid: 6f9aea4e2ee8a4bcaaa0e2fa83b88793, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
