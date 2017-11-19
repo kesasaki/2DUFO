@@ -227,6 +227,7 @@ MonoBehaviour:
   enemy2: {fileID: 1625439350651064, guid: 218d1fe8db0d9490194d5e50650e0c0f, type: 2}
   enemy3: {fileID: 0}
   player: {fileID: 1764691054}
+  enemyLevelUpTime: 10
 --- !u!4 &156402034
 Transform:
   m_ObjectHideFlags: 0

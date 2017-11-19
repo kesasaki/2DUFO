@@ -17,11 +17,13 @@ public class Scene : MonoBehaviour {
 	public GameObject enemy2;
 	public GameObject enemy3;
 	public GameObject player;
+	public float enemyLevelUpTime;
 
+	private float timeElapsed;
 	private int enemy_num_max = 3;
 	private bool end_flag=false;
 	private AudioSource audioSource;
-	private int point = 0;
+	private int point = 10;
 
 	void Start () {
 		audioSource = gameObject.GetComponent<AudioSource> ();
@@ -60,9 +62,16 @@ public class Scene : MonoBehaviour {
 
 		// 敵が減る
 		if (enemynum < enemy_num_max) {
-			point++;
 			initiateEnemy ();
 		}
+
+		// 敵の数が増える
+		if(timeElapsed >= enemyLevelUpTime) {
+			enemy_num_max ++ ;
+			timeElapsed = 0.0f;
+			Debug.Log ("Enemy num Up !!");
+		}
+		timeElapsed += Time.deltaTime;
 
 		// 現在のステータス表示
 		countText.text = "point: " + point.ToString();
